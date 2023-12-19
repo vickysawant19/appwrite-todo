@@ -41,7 +41,7 @@ const ShowTodo = ({todo ,getData}) => {
         className='bg-red-600 text-white py-1 rounded-xl px-2 hover:scale-105'>Delete</button>
         </div>
         
-
+  
     </div>
   )
 }
