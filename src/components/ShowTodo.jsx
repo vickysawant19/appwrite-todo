@@ -1,27 +1,39 @@
 import React, { useState } from 'react'
 import { COLLECTION_ID, DB_ID, db } from '../appwrite/AppwriteConfig'
 
-const ShowTodo = ({todo ,getData}) => {
+const ShowTodo = ({todo ,getData, setIsLoading}) => {
     
     const [check, setCheck] = useState(false)
 
     async function handleDelete(e){
       e.preventDefault()
       try{
+        setIsLoading(true)
        await db.deleteDocument(DB_ID,COLLECTION_ID,todo.$id)
        getData()
       }
       catch(error){
         console.log(error);
+      }finally{
+        setIsLoading(false)
       }
     }
 
    async function handleUpdate(e){
       setCheck(e.target.checked)
-      await db.updateDocument(DB_ID,COLLECTION_ID,todo.$id,{
-        completed:!todo.completed
-      })
-      getData()
+      try{
+        setIsLoading(true)
+        await db.updateDocument(DB_ID,COLLECTION_ID,todo.$id,{
+          completed:!todo.completed
+        })
+        getData()
+
+      }catch(err){
+        console.log(err)
+      }finally{
+        setIsLoading(false)
+      }
+     
     }
 
   return (

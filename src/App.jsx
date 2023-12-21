@@ -16,7 +16,7 @@ function App() {
 
   const getData = async () => {
     try {
-      setIsLoading(true)
+      
         const { documents } = await db.listDocuments(DB_ID, COLLECTION_ID,[Query.orderDesc('$createdAt'),
                        Query.limit(200)]);
 
@@ -24,8 +24,6 @@ function App() {
     
     } catch (error) {
       console.error('Error fetching data:', error)
-    }finally{
-      setIsLoading(false)
     }
   }
    
@@ -82,7 +80,8 @@ function App() {
         </div>
       {
         (todos?.map((todo, index) => (
-          <ShowTodo key={todo.$id} todo={todo} getData={getData}  />
+          <ShowTodo key={todo.$id} todo={todo} getData={getData}         setIsLoading={setIsLoading}
+          />
         
 )))
       }
