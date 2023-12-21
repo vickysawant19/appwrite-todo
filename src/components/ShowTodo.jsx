@@ -25,8 +25,8 @@ const ShowTodo = ({todo ,getData}) => {
     }
 
   return (
-    <div className='w-full p-2 bg-violet-200 border hover:bg-violet-300 flex justify-between '>
-        <div className={`${todo.completed ? 'line-through':''} uppercase font-semibold`}>
+    <div className='w-full p-2 bg-violet-200 border hover:bg-violet-300 flex justify-between'>
+        <div className={`${todo.completed ? 'line-through':''} overflow-clip line-clamp-2 uppercase font-semibold`}>
         {todo.body}
         </div>
         <div className='flex gap-2 items-center'> 
