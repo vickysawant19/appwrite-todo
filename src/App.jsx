@@ -62,8 +62,9 @@ function App() {
   return (
     <>
       <Navbar/>
-      {isLoading ?<Loading/>:"" }
       
+      {isLoading ?<Loading/>:""}
+     
       <div className='bg-violet-300 flex items-center flex-col justify-center w-96 mx-auto mt-10 rounded-xl overflow-hidden shadow-xl'>
         <div className='w-full gap-4 flex items-center my-2 '>
         <input 
