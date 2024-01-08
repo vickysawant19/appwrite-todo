@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from  './app.jsx'
+import App from  './App.jsx'
 import {store} from './app/store.js'
 
 import './index.css'
@@ -20,5 +20,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
        <RouterProvider router={router}/>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
