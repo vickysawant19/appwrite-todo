@@ -19,20 +19,23 @@ const Navbar = () => {
 
   return (
          <>
-         {
+         
           <div className='w-full z-50 bg-violet-400 flex items-center justify-between shadow-xl'> 
-   
-          <h1 className='text-xl font-semibold text-white p-2 selection:bg-white bg-blue-900  border-2 rounded-full m-2 hover:bg-blue-800'>
-              <span className='text-orange-300'>Todo</span>App
+          <div className='flex max-w-screen-md items-center justify-between mx-auto w-full'>
+          <h1 className='text-sm font-semibold text-white p-2 selection:bg-white bg-purple-900  border-2 rounded-full m-2 hover:bg-purple-800'>
+              <span className='text-purple-300'>Todo</span>App
           </h1>
-          <h1 className='text-xl mr-4'>{user &&'Welcome, '}
+          <h1 className='text-lg mr-4'>{user &&'Welcome, '}
           <span className='capitalize font-semibold'>{user?.name}</span></h1>
           {user ? <button 
           onClick={handleLogout}
-          className='mr-4 border p-2 rounded-full bg-red-500 text-white hover:bg-red-900'>Logout</button>:''}
+          className='mr-4 border p-2 text-sm rounded-full bg-red-600 text-white hover:scale-105'>Logout</button>:''}
 
-    </div>
-         }
+          </div>
+   
+         
+         </div>
+         
          
          
     </>

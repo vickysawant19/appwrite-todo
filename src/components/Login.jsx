@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser, setUser } from '../features/user'
 import { account } from '../appwrite/AppwriteConfig'
-import { useNavigate} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 
 const Login = () => {
     
@@ -86,6 +86,10 @@ const Login = () => {
            onClick={handleSubmit}
            className='p-2 w-full bg-purple-400 hover:bg-purple-500 mt-4 rounded'
            >Login</button>
+
+           <h1 className='text-gray-700 mt-2'>
+            Need a account? <span className='uppercase text-blue-700 font-semibold underline'><Link to={'/register'}>register here</Link></span>
+           </h1>
 
            </div>
         </div>
